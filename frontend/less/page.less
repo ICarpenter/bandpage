@@ -1,0 +1,122 @@
+.btn {
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        .opacity(.2);
+        color: @brand-gray;
+    }
+
+    &:active:focus, &:active, &:focus {
+        outline: none;
+    }
+
+    .transition(all 150ms ease-in-out);
+}
+
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+#bandpage-nav {
+    padding: 20px 0;
+    background: @brand-primary url('../images/stripes.svg') no-repeat;
+    .flex-display();
+    .justify-content(center);
+
+    h1 {
+        margin: 0;
+        a {
+            color: @brand-white;
+        }
+    }
+}
+
+#bangpage-container {
+    padding: 160px 0 20px 0;
+    position: relative;
+
+    .searchNav {
+        padding: 20px;
+        width: 100%;
+        position: fixed;
+        top: 78px;
+        border-bottom: @brand-border-lite;
+        border-top: @brand-border;
+        background: @brand-success;
+        z-index: @zindex-navbar;
+        .flex-display();
+        .justify-content(center);
+
+        input {
+            padding: 0 5px;
+            min-width: 200px;
+            height: 35px;
+            border: @brand-border;
+            border-radius: 4px;
+            vertical-align: middle;
+
+            &:active:focus, &:active, &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    .articleContainer {
+        &.ng-hide-add {
+            -webkit-animation: enter_sequence 300ms ease-in-out;
+            animation: enter_sequence 300ms ease-in-out;
+        }
+
+        .articleHeader {
+            margin-bottom: 10px;
+            .flex-display();
+            .justify-content(space-between);
+            .align-items(flex-end);
+        }
+
+        article {
+            margin-bottom: 20px;
+            border-radius: @border-radius-base;
+            border: @brand-border-lite;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            header {
+                padding: 20px;
+                border-radius: @border-radius-base @border-radius-base 0 0 ;
+                background: @brand-primary;
+                .flex-display();
+                .justify-content(space-between);
+                .align-items(flex-end);
+
+                h3 {
+                    margin: 0;
+                    color: @brand-white;
+                }
+
+                small {
+                    min-width: 10%;
+                    color: lighten(@text-color, 20%);
+                    align-self: center;
+                    text-align: right;
+                }
+            }
+
+            section {
+                padding: 20px;
+            }
+
+        }
+    }
+}
+
+#bandpage-content {
+    &.ng-enter {
+        -webkit-animation: enter_sequence 400ms ease-in-out;
+        animation: enter_sequence 400ms ease-in-out;
+    }
+}

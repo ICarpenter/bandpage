@@ -1,0 +1,21 @@
+<nav id="bandpage-nav" class="navbar-default navbar-fixed-top">
+    <h1><a ui-sref="bandpage.home">speed.reader</a></h1>
+</nav>
+<div class="searchNav">
+    <form name="FeedForm">
+        <input type="text" ng-model="MainCtrl.feed.url" required ng-minlength="6"/>
+        <button class="btn btn-primary" ng-click="MainCtrl.requestFeed()" ng-disabled="FeedForm.$invalid">Search</button>
+    </form>
+    <p ng-if="MainCtrl.error">{{MainCtrl.error}}</p>
+</div>
+
+<div class="articleContainer container">
+    <div class="articleHeader" ng-show="MainCtrl.feed.articles">
+        <h2>{{MainCtrl.blogTitle}} <small>{{MainCtrl.page}} of {{MainCtrl.totalArticles}}</small></h2>
+        <div>
+            <button class="btn btn-primary" ng-disabled="MainCtrl.page === 1" ng-click="MainCtrl.calcPage('prev')">prev</button>
+            <button class="btn btn-primary" ng-disabled="!MainCtrl.next" ng-click="MainCtrl.calcPage('next')">next</button>
+        </div>
+    </div>
+    <div id="bandpage-content" ui-view="bandpage-content"></div>
+</div>

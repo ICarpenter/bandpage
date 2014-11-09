@@ -1,0 +1,10 @@
+<article ng-repeat="article in ArticleCtrl.articles | orderBy:ArticleCtrl.predicate">
+    <header>
+        <h3>{{article.title}}</h3>
+        <small>{{article.displayTime}}</small>
+    </header>
+    <section>
+        <p ng-bind-html="article.summary"></p>
+        <a class="btn btn-info" ng-href="{{article.link}}" target="_blank">Read More</a>
+    </section>
+</article>
